@@ -49,7 +49,7 @@
                        :description "Snippet manager written with Clojure"}
                  :commands [{:command "debug"
                              :description "Print debug information"
-                             :runs print-all
+                             :runs (fn [_] (print-all))
                              }
                             ]}
            ))
