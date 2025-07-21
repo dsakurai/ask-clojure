@@ -17,14 +17,17 @@
   ))
 
 (defn -main []
-  (let [snippets-file-env (System/getenv "ASK_SNIPPET_FILE")]
-    (let [snippets-file-path (if (nil? snippets-file-env) "snippets.json" snippets-file-env)
+    (let [snippets-file-demo "snippets.json"
+          snippets-file-env (System/getenv "ASK_SNIPPET_FILE")
+          snippets-file-path (if (nil? snippets-file-env)
+                                 (do (println "The snippets file is not found! Using a demo file instead.") snippets-file-demo)
+                                 snippets-file-env)
           snippets-json-str (slurp snippets-file-path)
-          result (validate-schema
+          validation-result (validate-schema
                     (slurp "snippets-schema.json") ;; Might be slower than (io/input-stream "filename")
                     snippets-json-str
                    )
-          errors (:errors result)
+          errors (:errors validation-result)
           snippets-map (json/parse-string snippets-json-str)
           ]
       (if (.isEmpty errors)
@@ -37,5 +40,5 @@
           (println "JSON file does not follow the schema:")
           (doseq [err errors]
             (println (.getMessage err))))))
-   ))
+   )
 
