@@ -17,7 +17,7 @@
     {:errors errors :node node}
   ))
 
-(defn print-all [& _]
+(defn print-all []
     (let [snippets-file-demo "snippets.json"
           snippets-file-env (System/getenv "ASK_SNIPPET_FILE")
           snippets-file-path (if (nil? snippets-file-env) ;; It's better to try to load the file here. 
