@@ -5,6 +5,12 @@
       "contents": {
 	"path": "C:"
       }
+    },
+    { "name": "Explorer",
+      "MIME": "text/x-powershell",
+      "contents": {
+	"path": "explorer"
+      }
     }
   ]
 }
