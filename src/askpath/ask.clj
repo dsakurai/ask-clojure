@@ -27,8 +27,9 @@
         ]
     (if (.isEmpty errors)
       (println (get snippets-map "entries"))
+      ;; Print errors
       (do
-        (println "Invalid JSON:")
+        (println "JSON file does not follow the schema:")
         (doseq [err errors]
           (println (.getMessage err))))))
   )
