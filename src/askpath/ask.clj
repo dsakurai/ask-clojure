@@ -22,7 +22,7 @@
           snippets-file-env (System/getenv "ASK_SNIPPET_FILE")
           snippets-file-path (if (nil? snippets-file-env) ;; It's better to try to load the file here. 
                                                           ;; Currently, we're assuming that env var set == file exists.
-                                 (do (println "The snippets file is not found! Using a demo file instead.") snippets-file-demo)
+                                 (do (println "Path to the snippets file is not set! Using a demo file instead.") snippets-file-demo)
                                  snippets-file-env)
           snippets-json-str (slurp snippets-file-path)
           validation-result (validate-schema
