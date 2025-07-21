@@ -18,8 +18,8 @@
 
 (defn -main []
   (let [result (validate-schema
-                  (io/input-stream "snippets-schema.json")
-                  (io/input-stream "snippets.json")
+                  (slurp "snippets-schema.json") ;; Might be slower than (io/input-stream "filename")
+                  (slurp "snippets.json")
                  )
         errors (:errors result)
         ]
