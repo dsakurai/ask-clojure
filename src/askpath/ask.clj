@@ -1,6 +1,7 @@
 (ns askpath.ask
-  (:require [cheshire.core :as json]
-            [clojure.java.io :as io]
+  (:require [cheshire.core   :as json        ]
+            [clojure.java.io :as io          ]
+            [cli-matic.core  :refer [run-cmd]]
             )
   (:import (com.networknt.schema JsonSchemaFactory SpecVersion$VersionFlag JsonSchema ValidatorTypeCode)
            (com.fasterxml.jackson.databind ObjectMapper))
@@ -16,7 +17,7 @@
     {:errors errors :node node}
   ))
 
-(defn -main []
+(defn print-all [& _]
     (let [snippets-file-demo "snippets.json"
           snippets-file-env (System/getenv "ASK_SNIPPET_FILE")
           snippets-file-path (if (nil? snippets-file-env) ;; It's better to try to load the file here. 
@@ -41,5 +42,15 @@
           (println "JSON file does not follow the schema:")
           (doseq [err errors]
             (println (.getMessage err))))))
-   )
+  )
+
+(defn -main [& args]
+  (run-cmd args {:app {:command "ask-clojure"
+                       :description "Snippet manager written with Clojure"}
+                 :commands [{:command "debug"
+                             :description "Print debug information"
+                             :runs print-all
+                             }
+                            ]}
+           ))
 

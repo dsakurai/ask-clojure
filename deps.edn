@@ -5,6 +5,10 @@
    com.networknt/json-schema-validator {:mvn/version "1.0.76"}
    ;; Suppress SLF4J Warning
    org.slf4j/slf4j-nop {:mvn/version "2.0.13"}
-   }
-}
+   ;; Command line argument parser
+   cli-matic/cli-matic {:mvn/version "0.5.4"}
+   ;;l3nz/cli-matic { :git/url "https://github.com/l3nz/cli-matic.git"
+   ;;                 :git/tag "v0.5.4"
+   ;;                 :sha     "c8cef44"}
+   }}
 

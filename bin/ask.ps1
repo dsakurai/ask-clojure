@@ -1,3 +1,3 @@
 cd "$PSScriptRoot\.."
-clojure -M -m askpath.ask
+clojure -M -m askpath.ask @args
 
