@@ -17,14 +17,16 @@
   ))
 
 (defn -main []
-  (let [result (validate-schema
+  (let [snippets-json-str (slurp "snippets.json")
+        result (validate-schema
                   (slurp "snippets-schema.json") ;; Might be slower than (io/input-stream "filename")
-                  (slurp "snippets.json")
+                  snippets-json-str
                  )
         errors (:errors result)
+        snippets-map (json/parse-string snippets-json-str)
         ]
     (if (.isEmpty errors)
-      (println "Valid JSON")
+      (println (get snippets-map "entries"))
       (do
         (println "Invalid JSON:")
         (doseq [err errors]
