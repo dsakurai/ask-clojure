@@ -1,6 +1,7 @@
 {
   "entries": [
-    { "MIME": "inode/directory",
+    { "name": "C Drive root",
+      "MIME": "inode/directory",
       "contents": {
 	"path": "C:"
       }
