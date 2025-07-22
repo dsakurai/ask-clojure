@@ -13,7 +13,7 @@
     "remoteUser": "vscode",    // re-specify the user name in the container.
 
     "runArgs": [
-        "--volume=${localWorkspaceFolder}/nix-store:/nix/store:z" // mount the nix storage
+        "--volume=${localWorkspaceFolder}/.devcontainer/nix-store:/nix/store:z" // mount the nix storage
 
         // X11
         // NOT WORKING. Check out Toolbox: https://github.com/containers/toolbox/issues/610

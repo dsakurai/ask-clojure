@@ -1,4 +1,4 @@
-/nix-store
+/.devcontainer/nix-store
 /.env
 .venv
 .jupyter
