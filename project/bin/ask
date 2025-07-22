@@ -3,4 +3,4 @@
 # the directory of this script: https://stackoverflow.com/questions/39340169/dir-cd-dirname-bash-source0-pwd-how-does-that-work
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR/.."
-clojure -M -m askpath.ask "$@"
+clojure -M -m ask_clojure.ask "$@"

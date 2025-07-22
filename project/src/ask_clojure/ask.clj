@@ -1,4 +1,4 @@
-(ns askpath.ask
+(ns ask_clojure.ask
   (:require [cheshire.core   :as json        ]
             [clojure.java.io :as io          ]
             [cli-matic.core  :refer [run-cmd]]
