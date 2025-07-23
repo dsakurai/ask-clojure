@@ -11,7 +11,7 @@
  :aliases
  {:rebel+init
   {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
-   :main-opts ["-e" "(load-file \"repl_init.clj\" )"
-               "-e" "(user/start)"
+   :main-opts ["-e" "(require '[ask_clojure.ask :as ask])"
+               "-e" "(println \"ask_clojure.ask loaded as 'ask'\")"
                "-m" "rebel-readline.main"]}}
 }
