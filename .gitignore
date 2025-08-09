@@ -1,4 +1,5 @@
 /.devcontainer/nix-store
+.cpcache
 /.env
 .venv
 .jupyter
