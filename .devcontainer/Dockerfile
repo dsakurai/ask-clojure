@@ -25,6 +25,11 @@ RUN apt update && \
     # Clean up apt cache when done
     rm -rf /var/lib/apt/lists/*
 
+# RUN apt update && \
+#     apt install -y gradle libgradle-kotlin-dsl-java kotlin && \
+#     # Clean up apt cache when done
+#     rm -rf /var/lib/apt/lists/*
+# 
 # For VSCode
 RUN adduser --disabled-password --gecos "" vscode && adduser vscode sudo
 

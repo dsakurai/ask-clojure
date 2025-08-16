@@ -4,6 +4,9 @@ import javax.swing.JPanel
 import javax.swing.SwingUtilities
 
 class App : JFrame() {
+    val button = JButton("Click Me")
+    val panel = JPanel()
+
     init {
         title = "My Kotlin GUI App"
         setSize(400, 300)
@@ -12,8 +15,6 @@ class App : JFrame() {
     }
 
     private fun setupUI() {
-        val panel = JPanel()
-        val button = JButton("Click Me")
         button.addActionListener { println("Button clicked!") }
         panel.add(button)
         contentPane.add(panel)

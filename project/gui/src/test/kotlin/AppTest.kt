@@ -1,25 +1,17 @@
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import javax.swing.SwingUtilities
 
 class AppTest {
 
     @Test
-    fun testAppInitialization() {
+    fun testAppTitle() {
         val app = App()
-        SwingUtilities.invokeAndWait {
-            app.initialize()
-        }
-        assertEquals("Expected Title", app.frame.title)
+        assertEquals("My Kotlin GUI App", app.title)
     }
 
     @Test
-    fun testButtonFunctionality() {
+    fun testButtonText() {
         val app = App()
-        SwingUtilities.invokeAndWait {
-            app.initialize()
-            app.button.doClick()
-        }
-        assertEquals("Expected Result", app.label.text)
+        assertEquals("Click Me", app.button.text)
     }
 }

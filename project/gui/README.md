@@ -23,8 +23,7 @@ my-kotlin-gui-app
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
-   cd my-kotlin-gui-app
+   cd gui
    ```
 
 2. **Build the project**:

@@ -1,5 +1,5 @@
 {
-    "name": "Dev Container",
+    "name": "Ask Clojure",
     "build": {
       "dockerfile": "Dockerfile",
       "args": {

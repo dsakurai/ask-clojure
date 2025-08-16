@@ -15,6 +15,8 @@
     in pkgs.mkShell {
       buildInputs = with pkgs; [
         clojure
+        gradle
+        kotlin
       ];
 
       shellHook = ''
