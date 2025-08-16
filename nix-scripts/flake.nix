@@ -9,7 +9,6 @@
       pkgs = import nixpkgs {
          system = "x86_64-linux";
          config = {
-           enableJavaFX = true; # Likely not necessary
            allowUnfree = true;
          };
       };
