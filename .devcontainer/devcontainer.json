@@ -13,15 +13,14 @@
     "remoteUser": "vscode",    // re-specify the user name in the container.
 
     "runArgs": [
-        "--volume=${localWorkspaceFolder}/.devcontainer/nix-store:/nix/store:z" // mount the nix storage
+        "--volume=${localWorkspaceFolder}/.devcontainer/nix-store:/nix/store:z", // mount the nix storage
 
-        // X11
-        // NOT WORKING. Check out Toolbox: https://github.com/containers/toolbox/issues/610
-        // "--uidmap", "1000:0:1",
-        // "--uidmap", "0:1:1000",
-        // "-e", "DISPLAY",
-        // "--net=host",
-        // "--volume=${localEnv:XAUTHORITY}:/home/vscode/.Xauthority:Z"
+        // XWindow GUI
+        "--security-opt", "label=type:container_runtime_t",
+        "-e", "DISPLAY",
+        "-v", "${env:XAUTHORITY}:/tmp/.Xauthority:ro",
+        "-e", "XAUTHORITY=/tmp/.Xauthority",
+        "-v", "/tmp/.X11-unix:/tmp/.X11-unix:ro"
     ],
 
     // Install nix
